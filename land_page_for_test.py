@@ -57,7 +57,7 @@ class test_land_page:
         if page == "land" and buttom == 1:
             self.driver.refresh()
             time.sleep(self.stop_time)
-            scroll_js = "window.scrollTo(0,500)"
+            scroll_js = "window.scrollTo(0,1000)"
             self.driver.execute_script(scroll_js)
             send_phone = self.make_phone()
             self.driver.find_element_by_xpath(".//input[@id='tan2-phone']").send_keys(send_phone)
