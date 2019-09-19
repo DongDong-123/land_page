@@ -1,10 +1,10 @@
-from selenium import webdriver
 import random
 import re
 import time
-from selenium.webdriver.common.action_chains import ActionChains
 from front_login import front_login
 import json
+import sys
+
 
 class test_land_page:
     def __init__(self, stop_time):
@@ -480,7 +480,7 @@ class test_land_page:
         return code_dict
 
     def write_log(self, infos):
-        with open("send_log.txt", "a", encoding="utf-8") as f:
+        with open("send_log.txt", "a+", encoding="utf-8") as f:
             f.write(json.dumps(infos, ensure_ascii=False)+"\n")
 
     # 生成手机号
@@ -533,11 +533,8 @@ def main(page, buttom, stop_time):
                 print(e)
 
 
-
 if __name__ == "__main__":
-    # page = "land"  # land页面
-    # 底部线索
-    bottom_clue = 1
-    page = "gamma"  # gamma 页面
-    stop_time = 2
-    main(page, bottom_clue, stop_time)
+    parm = sys.argv[1:]
+    if parm:
+        page, bottom_clue, stop_time = parm[0], parm[1], parm[2]
+        main(page, bottom_clue, stop_time)
