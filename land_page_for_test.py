@@ -537,4 +537,4 @@ if __name__ == "__main__":
     parm = sys.argv[1:]
     if parm:
         page, bottom_clue, stop_time = parm[0], parm[1], parm[2]
-        main(page, bottom_clue, stop_time)
+        main(page, bottom_clue, int(stop_time))
