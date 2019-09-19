@@ -498,9 +498,8 @@ def main(page, buttom, stop_time):
     else:
         raise TypeError("页面类型错误！")
 
-    # page_dict = {"landzl": "国内专利", "landsb": "国内商标", "landgjzl": "国际专利", "landgjsb": "国际商标",
-    #              "landbq": "版权", "landzljy": "专利交易", "landtmjy": "商标交易"}
-    page_dict = {"landzljy": "专利交易", "landtmjy": "商标交易"}
+    page_dict = {"landzl": "国内专利", "landsb": "国内商标", "landgjzl": "国际专利", "landgjsb": "国际商标",
+                 "landbq": "版权", "landzljy": "专利交易", "landtmjy": "商标交易"}
     for page_name in page_dict.keys():
         url = base_url.format(page_name)
         if page_name == "landbq":
